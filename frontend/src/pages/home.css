@@ -1,0 +1,300 @@
+/* Global & Main */
+.main {
+  background-color: #f5f5f5; /* replace bg-clay */
+  color: #1f2937; /* slate */
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+/* Text for welcome message */
+.welcome-msg {
+  text-align: center;
+  font-size: 0.875rem; /* text-sm */
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+/* Section */
+.section {
+  padding: 10px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1120px; /* same as max-w-7xl */
+  margin: 0 auto;
+}
+
+/* Heading */
+.section h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: #0d9488; /* teal */
+}
+
+@media (min-width: 768px) {
+  .section h2 {
+    font-size: 1.875rem; /* md:text-3xl */
+  }
+}
+
+/* Loader */
+.loader {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.loader-spinner {
+  border-top: 4px solid #0d9488;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto;
+  animation: spin 1s linear infinite;
+}
+
+.loader-text {
+  margin-top: 1rem;
+  color: #1f2937;
+  font-size: 0.875rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Grid for listings */
+.listings-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .listings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .listings-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Individual Listing Card */
+.listing-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.listing-card:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/* Images container (horizontal scroll) */
+.images-container {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  flex-wrap: nowrap;
+}
+
+.images-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.images-container::-webkit-scrollbar-thumb {
+  background: #0d9488;
+  border-radius: 3px;
+}
+
+.images-container img {
+  width: 12rem; /* w-48 */
+  height: 10rem; /* h-40 */
+  object-fit: cover;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .images-container img {
+    width: 14rem; /* md:w-56 */
+    height: 12rem; /* md:h-48 */
+  }
+}
+
+/* Fallback image */
+.no-image {
+  width: 100%;
+  height: 14rem;
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+/* Card content */
+.card-content {
+  padding: 1.25rem;
+}
+
+.card-content h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1e3a8a; /* darkBlue */
+}
+
+.card-content p {
+  font-size: 0.875rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: 600;
+  color: #0d9488;
+}
+
+.furnished-badge {
+  display: inline-block;
+  background-color: #1e3a8a;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+/* Link Button */
+.view-listing {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #0d9488;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.2s;
+}
+
+.view-listing:hover {
+  background-color: #1e3a8a;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 1rem;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1f2937;
+}
+
+/* Modal Text */
+.modal-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #0d9488;
+}
+
+.modal-price {
+  font-weight: 600;
+  color: #0d9488;
+  margin-bottom: 0.5rem;
+}
+
+.modal-description,
+.modal-location,
+.modal-details {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #1f2937;
+}
+
+.modal-furnished {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* Modal Images Carousel */
+.modal-images {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.modal-images::-webkit-scrollbar {
+  height: 6px;
+}
+
+.modal-images::-webkit-scrollbar-thumb {
+  background: #0d9488;
+  border-radius: 3px;
+}
+
+.modal-image {
+  height: 200px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
